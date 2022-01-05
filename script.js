@@ -50,5 +50,12 @@ function buildScheduler(){
     }
 }
 
+function savePlan(event){
+    let planBox = $(event.target).siblings("textarea");
+    plans[planBox.parent().index()] = planBox.val();
+    localStorage.setItem("plans",JSON.stringify(plans));
+
+}
 
 init();
+schedule.on("click", ".btn", savePlan);
