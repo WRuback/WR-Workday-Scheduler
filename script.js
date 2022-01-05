@@ -1,2 +1,4 @@
 var today = $("#currentDay");
-today.text(moment());
+var schedule = $(".container");
+
+today.text(moment().format("MMMM Do, YYYY"));
