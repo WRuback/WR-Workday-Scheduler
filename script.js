@@ -59,7 +59,7 @@ function buildRow(time, plan){
     // Creates the save button element, applies classes and appends it to the row.
     let saveButton = $("<button>");
     saveButton.addClass("col-2 btn saveBtn");
-    // Adds the Floppy disk icon element to the element.
+    // Adds the Floppy disk icon element to the button.
     saveButton.append("<i>").addClass("fa fa-floppy-o fa-3x");
     scheduleRow.append(saveButton);
 
@@ -69,7 +69,7 @@ function buildRow(time, plan){
 
 // Creates each of the rows in the schedule.
 function buildScheduler(){
-    // Sets the time item for be 8am. When the loop runs, one hour will be added, making the starter element have the right time.
+    // Sets the time item to be 8am. When the loop runs, one hour will be added, making the starter element have the right time of 9am.
     let hour = moment("8AM", "hA");
     // The plans, grabbed from local storage, is the exact length to start at 9am, and end at 5pm.
     for(let i =0;i<plans.length; i++){
@@ -82,7 +82,7 @@ function buildScheduler(){
 function savePlan(event){
     // These navigate from the pressed button, to the textbox.
     let planBox = $(event.target).siblings("textarea");
-    // Find the parent row, and it's index in the schedule. This will be the same index as where the plan needs to be saved in the plans array, due to the order they were added in.
+    // Find the parent row, and it's index in the schedule. This will be the same index as where the new plan needs to be saved in the plans array, due to the order they were added in.
     plans[planBox.parent().index()] = planBox.val();
     localStorage.setItem("plans",JSON.stringify(plans));
 
