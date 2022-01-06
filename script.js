@@ -5,7 +5,7 @@ var schedule = $("#scheduler");
 // This will store the local storage item of the event plans.
 var plans = "";
 
-//Sets up the scene.
+// Sets up the scene.
 function init(){
     // Sets the current day display to today.
     today.text(moment().format("MMMM Do, YYYY"));
