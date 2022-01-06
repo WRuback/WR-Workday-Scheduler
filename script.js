@@ -43,7 +43,7 @@ function buildRow(time, plan){
     // Creates the plan input element, applies classes and appends it to the row.
     let planInput = $("<textarea>");
     planInput.addClass("col-8");
-    //Check the current time. If it is after the current time, set style to future. Before, the past. If the same, set to present.
+    // Check the current time. If it is after the current time, set style to future. Before, the past. If the same, set to present.
     if(time.hour() > moment().hour()){
         planInput.addClass("future");
     }
